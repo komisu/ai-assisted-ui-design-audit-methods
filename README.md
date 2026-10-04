@@ -35,6 +35,8 @@ IntentがUI上のどこで評価可能かを分離して扱う**ことを重視�
 
   `design-md-compliance-verification.md`          Tested / evolving       Design.mdを参照したUI／実装をRule ID単位で検証
 
+  `design-intent-rule-mapping.md`                **Experimental**        Design.mdのRuleをDesign Intentへ対応付け、ComplianceとOutcomeを接続
+
   `ux-outcome-opportunity-inventory-process.md`   **Experimental**        UX Outcome採点前に、対象UI上のObservation
                                                                                Opportunityを抽出・固定
   ------------------------------------------------------------------------------------------------------------------------------------------
@@ -55,6 +57,7 @@ IntentがUI上のどこで評価可能かを分離して扱う**ことを重視�
     ├── design-md-ai-readability-audit.md
     ├── design-md-rule-id-instructions.md
     ├── design-md-compliance-verification.md
+    ├── design-intent-rule-mapping.md
     └── ux-outcome-opportunity-inventory-process.md
 ```
 
@@ -268,7 +271,21 @@ Compliance結果はUI品質やUX Outcomeへ自動変換しません。
 
 ------------------------------------------------------------------------
 
-## 5. UX Outcome Opportunity Inventory Process
+## 5. Design Intent ↔ Rule Mapping
+
+> **Status: Experimental**
+
+Design.mdのActive RuleをDesign Intentへ対応付け、Rule ComplianceとUX Outcome Measurementの間にTraceabilityを作るMethodです。
+
+Ruleは `Primary` / `Supporting` / `Directなし` に分類します。すべてのRuleを無理にUX Outcomeへ紐づけません。
+
+このMethodにはB2B SaaS／業務システムで検証中のINT-01〜INT-08の例示Intent Setも含みますが、普遍的なUX標準として固定するものではありません。対象Design.mdからIntentを抽出・確認し、Human Review後にMappingをFreezeします。
+
+Compliance結果をUX Scoreへ自動変換しません。
+
+------------------------------------------------------------------------
+
+## 6. UX Outcome Opportunity Inventory Process
 
 > **Status: Experimental**
 
@@ -364,6 +381,9 @@ Complianceを測定可能にしたい
 
 UI／実装品質のBefore / Afterを比較したい
 → UI-AUDIT-PROCESS / Comparative Mode
+
+Design.mdのRuleとDesign Intentを対応付けたい
+→ Design Intent ↔ Rule Mapping
 
 Design IntentのUX Outcome測定機会を固定したい
 → UX Outcome Opportunity Inventory Process
